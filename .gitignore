@@ -2,3 +2,4 @@
 venv_chirho
 *.sublime-workspace
 .env
+__pycache__
