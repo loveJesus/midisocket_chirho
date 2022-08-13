@@ -1,0 +1,6 @@
+# For God so loved the world, that He gave His only begotten Son, that whosoever believeth in Him should not perish, but have everlasting life.
+# brew install portmidi
+mido
+pygame
+python-dotenv
+simpleobsws
