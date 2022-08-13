@@ -23,6 +23,8 @@ brew install rtmidi jack2 portmidi
 
 python3.10 -m venv venv_chirho
 source venv_chirho/bin/activate
-pip install --upgrade pip && pip install --upgrade -r requirements_chirho.txt --global-option=build_ext --global-option="-L/opt/homebrew/lib/" --global-option=build_ext --global-option="-I/opt/homebrew/include/"
+pip install --upgrade pip
+pip install simpleobsws
+pip install --upgrade -r requirements_chirho.txt --global-option=build_ext --global-option="-L/opt/homebrew/lib/" --global-option=build_ext --global-option="-I/opt/homebrew/include/"
 ./midisocket_chirho.py
 ```

@@ -8,7 +8,7 @@ logger_chirho = logging.getLogger(__name__)
 class InportMonitorChirho:
     def __init__(
             self, *args_chirho,
-            base_app_chirho: 'obsmidisocket_chirho.BaseAppChirho', input_name_chirho: str = "", **kwargs_chirho):
+            base_app_chirho: 'midisocket_chirho.BaseAppChirho', input_name_chirho: str = "", **kwargs_chirho):
         super().__init__(*args_chirho, **kwargs_chirho)
         self.base_app_chirho = base_app_chirho
         self.inport_chirho = mido.open_input(input_name_chirho)
