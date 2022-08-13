@@ -1,6 +1,8 @@
 # For God so loved the world, that He gave His only begotten Son, that whosoever believeth in Him should not perish, but have everlasting life.
-# brew install portmidi
+# brew install rtmidi portmidi
+#  --global-option=build_ext --global-option="-L/opt/homebrew/lib/" --global-option=build_ext --global-option="-I/opt/homebrew/include/"
 mido
-pygame
+# pygame
 python-dotenv
+python-rtmidi
 simpleobsws

@@ -16,18 +16,21 @@ class OutportWriterChirho:
         self.outport_chirho = mido.open_output(outport_name_chirho)
 
     def close_chirho(self):
-        self.outport_chirho.close()
+        # self.outport_chirho.close()
         logger_chirho.info("Aleluya - Closed outport")
 
     async def outport_write_chirho(self):
-        for aleluya in range(1, 10):
-            msg_chirho = mido.Message("note_on", note=100, velocity=35, time=0.2)
-            self.outport_chirho.send(msg_chirho)
-            await asyncio.sleep(0.1)
-            msg_chirho = mido.Message("note_off", note=80, velocity=35, time=0.2)
-            self.outport_chirho.send(msg_chirho)
+        for aleluya in range(1, 100):
+            self.outport_chirho.send(mido.Message("note_on", note=50, velocity=35, time=0.2))
+            await asyncio.sleep(0.2)
+            logger_chirho.info("Aleluya - {}".format(aleluya))
+            self.outport_chirho.send(mido.Message("note_on", note=53, velocity=35, time=0.2))
+            await asyncio.sleep(0.2)
+            self.outport_chirho.send(mido.Message("note_off", note=50, velocity=35, time=0.2))
             await asyncio.sleep(0.3)
-            msg_chirho = mido.Message("note_on", note=80, velocity=35, time=0.2)
-            self.outport_chirho.send(msg_chirho)
+            self.outport_chirho.send(mido.Message("note_off", note=53, velocity=35, time=0.2))
+
+        self.outport_chirho.send(mido.Message("note_off", note=50, velocity=35, time=0.2))
+        self.outport_chirho.send(mido.Message("note_off", note=53, velocity=35, time=0.2))
         self.base_app_chirho.is_running_chirho = False
         logger_chirho.info("Aleluya - Finished outport write")

@@ -7,16 +7,16 @@ import sys
 
 from dotenv import load_dotenv
 
-from midi_input_chirho.inport_monitor_chirho import InportMonitorChirho
-from midi_output_chirho.outport_writer_chirho import OutportWriterChirho
-from obswsinterface_chirho import obsws_chirho
+from midisocket_chirho.midi_input_chirho.inport_monitor_chirho import InportMonitorChirho
+from midisocket_chirho.midi_output_chirho.outport_writer_chirho import OutportWriterChirho
+from midisocket_chirho.obswsinterface_chirho import obsws_chirho
 
 logging.basicConfig()
 logging.getLogger().setLevel(logging.INFO)
 logger_chirho = logging.getLogger(__name__)
 load_dotenv()
 
-mido.set_backend("mido.backends.pygame")
+mido.set_backend("mido.backends.rtmidi")
 print(mido.get_output_names())
 print(mido.get_input_names())
 
@@ -35,7 +35,7 @@ class BaseAppChirho:
         inport_monitor_chirho = InportMonitorChirho(
             base_app_chirho=self, input_name_chirho="Launchpad MK2")
         outport_writer_chirho = OutportWriterChirho(
-            base_app_chirho=self, outport_name_chirho="IAC Driver Bus Aleluya 1")
+            base_app_chirho=self, outport_name_chirho="IAC Chirho aleluyas 1")
 
         try:
             await asyncio.gather(
