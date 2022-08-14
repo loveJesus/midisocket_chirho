@@ -1,8 +1,11 @@
 # For God so loved the world, that He gave His only begotten Son, that whosoever believeth in Him should not perish, but have everlasting life.
 # brew install rtmidi portmidi
 #  --global-option=build_ext --global-option="-L/opt/homebrew/lib/" --global-option=build_ext --global-option="-I/opt/homebrew/include/"
+
+# detect keypress to quit, for now use async method ...
+# pynput
 mido
 # pygame
 python-dotenv
-python-rtmidi
+python-rtmidi --global-option=build_ext --global-option="-L/opt/homebrew/lib/" --global-option=build_ext --global-option="-I/opt/homebrew/include/"
 simpleobsws
