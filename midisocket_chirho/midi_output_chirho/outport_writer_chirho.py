@@ -29,7 +29,8 @@ class MidiOutportDriverChirho:
             self, *args_chirho,
             base_app_chirho: 'midisocket_chirho.BaseAppChirho',  outport_name_chirho: str = "", **kwargs_chirho):
         super().__init__(*args_chirho, **kwargs_chirho)
-        self.base_app_chirho = base_app_chirho
+        from midisocket_chirho.base_app_chirho import BaseAppChirho
+        self.base_app_chirho: BaseAppChirho = base_app_chirho
         self.outport_chirho = mido.open_output(outport_name_chirho)
 
     def close_chirho(self):
